@@ -1,5 +1,6 @@
 package com.zy.blog.dao;
 
+import com.zy.blog.common.PageModel;
 import com.zy.blog.po.ArticleLabel;
 import com.zy.blog.po.ArticleLabelExample;
 
@@ -21,4 +22,6 @@ public interface ArticleLabelMapper {
     int updateByExampleSelective(@Param("record") ArticleLabel record, @Param("example") ArticleLabelExample example);
 
     int updateByExample(@Param("record") ArticleLabel record, @Param("example") ArticleLabelExample example);
+
+    List<ArticleLabel> list(PageModel pageModel);
 }
