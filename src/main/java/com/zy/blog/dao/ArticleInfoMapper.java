@@ -6,7 +6,9 @@ import com.zy.blog.po.ArticleInfoExample;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface ArticleInfoMapper {
     long countByExample(ArticleInfoExample example);
 

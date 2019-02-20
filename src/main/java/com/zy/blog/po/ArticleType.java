@@ -1,19 +1,21 @@
 package com.zy.blog.po;
 
+
 public class ArticleType {
+	
     private Integer id;
 
     private String name;
 
     public Integer getId() {
-        return id;
-    }
+		return id;
+	}
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    public String getName() {
+	public String getName() {
         return name;
     }
 

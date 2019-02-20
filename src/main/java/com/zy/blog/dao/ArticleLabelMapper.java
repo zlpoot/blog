@@ -7,7 +7,9 @@ import com.zy.blog.po.ArticleLabelExample;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface ArticleLabelMapper {
     long countByExample(ArticleLabelExample example);
 
