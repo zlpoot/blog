@@ -297,4 +297,11 @@
             <include refid="Update_By_Example_Where_Clause"/>
         </if>
     </update>
+    <select id="list" parameterType="com.zy.blog.common.PageModel" resultMap="ResultMapWithBLOBs">
+        select
+        <include refid="Base_Column_List"/>,
+        <include refid="Blob_Column_List"/>
+        from article_info
+        limit #{startNum}, #{pageSize}
+    </select>
 </mapper>

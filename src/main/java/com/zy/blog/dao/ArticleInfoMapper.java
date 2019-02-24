@@ -1,5 +1,6 @@
 package com.zy.blog.dao;
 
+import com.zy.blog.common.PageModel;
 import com.zy.blog.po.ArticleInfo;
 import com.zy.blog.po.ArticleInfoExample;
 
@@ -27,4 +28,6 @@ public interface ArticleInfoMapper {
     int updateByExampleWithBLOBs(@Param("record") ArticleInfo record, @Param("example") ArticleInfoExample example);
 
     int updateByExample(@Param("record") ArticleInfo record, @Param("example") ArticleInfoExample example);
+
+	List<ArticleInfo> list(PageModel pageModel);
 }
