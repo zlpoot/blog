@@ -27,11 +27,29 @@ public class InfoServiceImpl implements InfoService {
         if(StringUtils.isEmpty(articleInfo.getId())){
             articleInfo.setCreateDate(new Date());
             articleInfo.setUpdateDate(new Date());
+            String content = articleInfo.getContent();
+            String viewDesc;
+            if(content.length() > 80) {
+            	viewDesc = content.substring(0, 80);           	
+            }else {
+            	viewDesc = content.substring(0, content.length());
+            }
+            viewDesc += "……";
+            articleInfo.setViewDesc(viewDesc);
             articleInfo.setViewCount(0);
             articleInfoMapper.insert(articleInfo);
             AlertMessage alertMessage = new AlertMessage("新增成功", MsgType.SUCCESS);
             dto.setAlertMessage(alertMessage);
         }else {
+        	String content = articleInfo.getContent();
+            String viewDesc;
+            if(content.length() > 80) {
+            	viewDesc = content.substring(0, 80);           	
+            }else {
+            	viewDesc = content.substring(0, content.length());
+            }
+            viewDesc += "……";
+            articleInfo.setViewDesc(viewDesc);
             ArticleInfoExample example = new ArticleInfoExample();
             articleInfo.setUpdateDate(new Date());
             example.createCriteria().andIdEqualTo(articleInfo.getId());
